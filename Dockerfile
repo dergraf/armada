@@ -17,5 +17,6 @@ RUN wget https://github.com/aep/recall/releases/download/1/recall-x86_64 -q -O /
 RUN chmod +x /bin/recall
 
 EXPOSE  1883
+EXPOSE  1884
 ENTRYPOINT  ["./run.sh"]
 
