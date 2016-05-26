@@ -3,7 +3,7 @@
 case $1 in
     run)
         ifconfig
-        vernemq console | recall vernemq
+        mosquitto | recall armada
         ;;
     shell)
         bin/bash
@@ -13,10 +13,8 @@ case $1 in
         ;;
     *)
         cat <<-EOF
-        Verne.mq Docker Image
-        Usage: docker run --tty --interactive [command]
         Commands:
-        run         Run vernemq
+        run         Run that thing
         shell       Run a bash shell without starting vernemq
         usage       Show more usage information
 EOF
