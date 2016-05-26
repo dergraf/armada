@@ -1,0 +1,17 @@
+{application, fleet_auth_plugin, [
+  {description, "Fleet auth for VerneMQ"},
+  {vsn, "0.0.1"},
+  {registered, []},
+  {applications, [kernel, stdlib, inets]},
+  {mod, {fleet_auth_plugin_app, []}},
+  {env, [
+    %% this tells VerneMQ to look in the file 'fleet_auth_plugin'
+    %% for the plugin hook functions. The format is:
+    %%  {ModuleName, HookName, Arity, Opts}
+    {vmq_plugin_hooks, [
+      {fleet_auth_plugin, auth_on_register, 5, []},
+      {fleet_auth_plugin, auth_on_publish, 6, []},
+      {fleet_auth_plugin, auth_on_subscribe, 3, []}
+    ]}
+  ]}
+]}.

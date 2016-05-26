@@ -1,4 +1,4 @@
--module(vernemq_demo_plugin_app).
+-module(fleet_auth_plugin_app).
 
 -behaviour(application).
 
@@ -10,7 +10,7 @@
 %% ===================================================================
 
 start(_StartType, _StartArgs) ->
-    vernemq_demo_plugin_sup:start_link().
+    fleet_auth_plugin_sup:start_link().
 
 stop(_State) ->
     ok.

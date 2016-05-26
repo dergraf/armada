@@ -2,8 +2,8 @@
 
 This plugin demonstrates how you can develop an Authentication/Authorization plugin for VerneMQ. The important files are:
 
-- src/vernemq_demo_plugin.erl 
-- src/vernemq_demo_plugin.app.src
+- src/fleet_auth_plugin.erl 
+- src/fleet_auth_plugin.app.src
 
 The rest is the Erlang OTP application boilerplate.
 
@@ -15,7 +15,7 @@ You must have a recent version of Erlang installed (it's recommended to use the 
 
 Then enable the plugin
 
-    vmq-admin plugin enable --name vernemq_demo_plugin --path <PathToYourPlugin>/vernemq_demo_plugin
+    vmq-admin plugin enable --name fleet_auth_plugin --path <PathToYourPlugin>/fleet_auth_plugin
 
 Depending on how VerneMQ is started you might need ``sudo`` rights to access ``vmq-admin``.
 Moreover the ``<PathToYourPlugin>`` should be accessible by VerneMQ (file permissions).

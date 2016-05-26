@@ -1,4 +1,4 @@
--module(vernemq_demo_plugin_sup).
+-module(fleet_auth_plugin_sup).
 
 -behaviour(supervisor).
 
