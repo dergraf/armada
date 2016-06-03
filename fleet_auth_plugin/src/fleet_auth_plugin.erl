@@ -42,9 +42,8 @@ auth_on_register_internal(Peer, SubscriberId, ClientId, Password, CleanSession) 
     %% do a simple request with pylon headers
     URL     = "http://fleet.superscale.io/v1/pylon/auth",
     Headers = [{"pylon-name", ClientId}, {"pylon-key", Password}],
-
-    case httpc:request(get, {URL, Headers}, [{timeout, 5000}], []) of
-        {ok, {{_, Code, _}, _, _}} when Code >= 200, Code < 300 ->
+    case hackney:get(URL, Headers, <<>>, []) of
+        {ok, Code, _, _} when Code >= 200, Code < 300 ->
             error_logger:info_msg("auth_on_register succeeded: ~p ~p ~p ~p ~p",
                                   [Peer, SubscriberId, ClientId, CleanSession]),
             ok;

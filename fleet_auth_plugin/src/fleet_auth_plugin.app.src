@@ -2,7 +2,7 @@
   {description, "Fleet auth for VerneMQ"},
   {vsn, "0.0.1"},
   {registered, []},
-  {applications, [kernel, stdlib, inets]},
+  {applications, [kernel, stdlib, hackney]},
   {mod, {fleet_auth_plugin_app, []}},
   {env, [
     %% this tells VerneMQ to look in the file 'fleet_auth_plugin'
